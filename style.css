@@ -1,0 +1,74 @@
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(45deg, black, lightgray);
+}
+
+.calculadora{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px,auto) repeat(5, 80px);
+}
+
+.calculadora > button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    margin: .2rem;
+}
+
+.numero{
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+.operacao{
+    background-color: rgb(242, 153, 58);
+    color: white;
+}
+
+.apaga{
+    background-color: rgb(165, 165, 165);
+    font-weight: 600;
+}
+
+.calculadora > button:hover{
+    opacity: .6;
+}
+
+#duplo_AC, #duplo_zero{
+    grid-column: span 2;
+    border-radius: 40px;
+}
+
+.saida{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .7rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.saida .calculo-anterior{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.saida .calculo-atual{
+    color: white;
+    font-size: 2.5rem;
+}
